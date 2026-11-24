@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Themed-icon layer (Android 13+). Only alpha counts here, so the babble dots
+     are cut out of the bubble with evenOdd rather than painted a second colour. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M44,34H64A14,14 0,0 1,78 48V54A14,14 0,0 1,64 68H44A14,14 0,0 1,30 54V48A14,14 0,0 1,44 34Z M38,51a4,4 0,1 0,8 0a4,4 0,1 0,-8 0Z M50,51a4,4 0,1 0,8 0a4,4 0,1 0,-8 0Z M62,51a4,4 0,1 0,8 0a4,4 0,1 0,-8 0Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M38,62L35,79L52,66Z" />
+</vector>

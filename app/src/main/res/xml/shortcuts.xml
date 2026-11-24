@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Long-press the launcher icon (or drag this to the home screen) to open the
+     app already recording. targetPackage must equal the applicationId exactly,
+     which is why no build type may add an applicationIdSuffix. -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_record"
+        android:shortcutId="record_now"
+        android:shortcutLongLabel="@string/shortcut_record_long"
+        android:shortcutShortLabel="@string/shortcut_record_short">
+        <intent
+            android:action="qdvc.dahdoo.android.app.action.RECORD"
+            android:targetClass="qdvc.dahdoo.android.app.MainActivity"
+            android:targetPackage="qdvc.dahdoo.android.app" />
+    </shortcut>
+</shortcuts>

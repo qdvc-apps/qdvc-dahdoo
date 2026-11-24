@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Must match the light theme's background in ui/theme/Theme.kt so there is
+         no flash of a different colour between the launch window and the first
+         Compose frame. -->
+    <color name="launch_background">#FFF8F2</color>
+    <color name="ic_launcher_background">#FF8A7A</color>
+    <color name="ic_launcher_bubble">#FFFFFF</color>
+    <color name="ic_launcher_dots">#FF8A7A</color>
+</resources>

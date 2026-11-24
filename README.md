@@ -118,8 +118,22 @@ Open the project in Android Studio, or from the command line:
 Judge start-up speed on a **release** build. Debug builds of Compose apps are
 several times slower to reach their first frame.
 
-Toolchain: AGP 8.5.2, Kotlin 2.0.21 (Compose compiler plugin), Compose BOM
-2024.09.02, Gradle 8.9, JDK 17, `minSdk` 26, `compileSdk`/`targetSdk` 34.
+### Toolchain
+
+| Piece | Version |
+| --- | --- |
+| Android Studio | **Panda 4 (2025.3.4) / Quail 1 (2026.1.1) or newer** (oldest that can open AGP 9.2) |
+| Gradle JDK | 17 to 26 (Studio's bundled JDK is fine) |
+| Gradle | 9.4.1 |
+| Android Gradle plugin | 9.2.1, with built-in Kotlin |
+| Kotlin Gradle plugin and Compose compiler plugin | 2.3.10 (pinned together) |
+| Compose BOM | 2024.09.02 |
+| SDK | `minSdk` 26, `compileSdk`/`targetSdk` 34; Java/Kotlin bytecode 17 |
+
+If Studio reports that the project's Gradle version is incompatible with the
+Gradle JVM, or that the AGP version is too new for this Studio, compare your
+Studio version (Help > About) with the first row. See
+`cursed-knowledge-reports/` for why these versions fit together.
 
 ## Deviations from the specification
 

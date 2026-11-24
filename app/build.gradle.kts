@@ -1,6 +1,7 @@
 plugins {
+    // No org.jetbrains.kotlin.android: AGP 9 compiles Kotlin itself, and that
+    // plugin is incompatible with AGP 9's DSL.
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
@@ -39,13 +40,11 @@ android {
         }
     }
 
+    // Built-in Kotlin takes its jvmTarget from targetCompatibility, so there is
+    // no kotlinOptions block (it doesn't exist in AGP 9's DSL).
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
     }
 
     buildFeatures {

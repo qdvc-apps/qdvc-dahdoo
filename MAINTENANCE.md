@@ -112,9 +112,30 @@ files that lack it.
 - Dark mode on every screen (Compose text outside a Surface goes black).
 - Three-button navigation as well as gestures (system-bar colours).
 
+## Changing toolchain versions
+
+Gradle, AGP, Kotlin and Android Studio constrain each other, so don't bump just
+one of them. Start from the oldest Android Studio you need to support, then
+work through:
+
+1. Studio version → highest AGP it can open (Android Developers' "Android Gradle
+   plugin and Android Studio compatibility" table).
+2. AGP version → minimum Gradle version (the same page) and the Kotlin Gradle
+   plugin it depends on (that AGP version's release notes).
+3. Gradle version → which JDKs it can run on (Gradle's compatibility matrix).
+   It must run on Studio's Gradle JDK, which is the bundled JDK unless someone
+   changed it. JDK 25 needs Gradle 9.1 or later.
+4. Keep `kotlin-gradle-plugin` on the `buildscript` classpath and
+   `org.jetbrains.kotlin.plugin.compose` at the **same** version.
+
+Raising `compileSdk` or the Compose BOM is a separate change: newer AndroidX
+libraries require a newer `compileSdk`.
+
 ## Do not
 
 - Add an `applicationIdSuffix`: the static shortcut names the package literally.
 - Add any networking dependency, or remove the `tools:node="remove"` lines.
+- Re-add the `org.jetbrains.kotlin.android` plugin or a `kotlinOptions` block:
+  AGP 9 compiles Kotlin itself, and both break its DSL.
 - Raise `targetSdk` to 35 without reading the Cursed Knowledge entry on the
   navigation-bar scrim; `Theme.kt` uses the SDK 34 approach.
